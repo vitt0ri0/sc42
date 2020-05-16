@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emetapod <vitt0ri0.progr@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/16 19:07:53 by emetapod          #+#    #+#             */
+/*   Updated: 2020/05/16 19:17:19 by emetapod         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	ft_strncmp_mod(const char *s1, const char *s2, size_t len)
@@ -10,7 +22,7 @@ static int	ft_strncmp_mod(const char *s1, const char *s2, size_t len)
 	if (s2[i] == TERM)
 		return (*s1 - *s2);
 	else
-		return 1;
+		return (1);
 }
 
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
@@ -18,7 +30,7 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	i;
 	size_t	j;
 	int		n;
-	char 	*res;
+	char	*res;
 
 	res = NULL;
 	i = 0;

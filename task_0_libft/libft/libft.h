@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: emetapod <vitt0ri0.progr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/11 20:04:49 by emetapod          #+#    #+#             */
-/*   Updated: 2020/05/16 16:48:09 by emetapod         ###   ########.fr       */
+/*   Created: 2020/05/16 19:06:55 by emetapod          #+#    #+#             */
+/*   Updated: 2020/05/16 19:19:17 by emetapod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef unsigned char	t_uchar;
 
 void	*memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
-void 	*ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
