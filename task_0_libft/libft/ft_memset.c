@@ -6,13 +6,13 @@
 /*   By: emetapod <vitt0ri0.progr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/16 19:06:55 by emetapod          #+#    #+#             */
-/*   Updated: 2020/05/16 19:06:55 by emetapod         ###   ########.fr       */
+/*   Updated: 2020/05/16 19:09:00 by emetapod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t			i;
 	unsigned char	*p;

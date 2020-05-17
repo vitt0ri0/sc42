@@ -9,7 +9,7 @@ int main()
 {
 	const char s[] = "hello";
 	char dst[] = "     ";
-	char *dst = "       "
+	char *dst = "       ";
 
 //	void *s1 = (void *)s;
 //	void *s2 = (void *)dst;

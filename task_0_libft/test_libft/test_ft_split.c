@@ -74,8 +74,9 @@ int main()
 
 //	test_print_strings();
 	test_ft_split("hey hello   fuck world sc21 the best", ' ');
-	printf("\n");
+//	printf("\n");
 	test_ft_split("", ' ');
+	test_ft_split("", 0);
 
 	return 0;
 }

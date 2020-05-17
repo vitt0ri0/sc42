@@ -6,7 +6,7 @@
 /*   By: emetapod <vitt0ri0.progr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/16 19:08:35 by emetapod          #+#    #+#             */
-/*   Updated: 2020/05/16 19:08:59 by emetapod         ###   ########.fr       */
+/*   Updated: 2020/05/16 22:57:42 by emetapod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t len)
 	ss1 = (t_uchar *)s1;
 	ss2 = (t_uchar *)s2;
 	i = 0;
-	while (ss1[i] == ss2[i] && i < len)
+	while (ss1[i] == ss2[i] && i < len - 1)
 		i++;
 	return (ss1[i] - ss2[i]);
 }

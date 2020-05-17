@@ -6,7 +6,7 @@
 /*   By: emetapod <vitt0ri0.progr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/16 19:06:55 by emetapod          #+#    #+#             */
-/*   Updated: 2020/05/16 19:06:55 by emetapod         ###   ########.fr       */
+/*   Updated: 2020/05/16 19:08:59 by emetapod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char		*ft_strdup(const char *src)
 
 	len = ft_strlen(src) + 1;
 	new = malloc(sizeof(char) * len);
+	if (!new)
+		return (NULL);
 	ft_strlcpy(new, src, len);
 	return (new);
 }

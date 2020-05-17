@@ -6,7 +6,7 @@
 /*   By: emetapod <vitt0ri0.progr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/16 19:07:41 by emetapod          #+#    #+#             */
-/*   Updated: 2020/05/16 19:09:00 by emetapod         ###   ########.fr       */
+/*   Updated: 2020/05/17 23:37:20 by emetapod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s || !f)
 		return (NULL);
-	res = malloc(sizeof(char) + ft_strlen(s) + 1);
+	res = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!res)
 		return (NULL);
 	i = 0;
@@ -28,5 +28,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		res[i] = f(i, s[i]);
 		i++;
 	}
+	res[i] = TERM;
 	return (res);
 }

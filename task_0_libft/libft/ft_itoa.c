@@ -6,7 +6,7 @@
 /*   By: emetapod <vitt0ri0.progr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/16 19:08:49 by emetapod          #+#    #+#             */
-/*   Updated: 2020/05/16 19:08:49 by emetapod         ###   ########.fr       */
+/*   Updated: 2020/05/16 23:23:40 by emetapod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,12 @@ static int	count_len(int i)
 		return (1);
 	while (i != 0)
 	{
+		if (i < 0)
+			len++;
 		i /= 10;
 		len++;
 		if (i < 0)
-		{
 			i /= -1;
-			len++;
-		}
 	}
 	return (len);
 }

@@ -18,8 +18,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	str_len;
 	char	*ss;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	str_len = ft_strlen(s);
+	if (start > str_len)
+		len = 0;
 	ss = (char*)malloc(sizeof(char) * (len + 1));
 	if (!ss)
 		return (NULL);

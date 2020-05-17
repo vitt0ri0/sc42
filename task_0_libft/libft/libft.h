@@ -6,7 +6,7 @@
 /*   By: emetapod <vitt0ri0.progr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/16 19:06:55 by emetapod          #+#    #+#             */
-/*   Updated: 2020/05/16 19:19:17 by emetapod         ###   ########.fr       */
+/*   Updated: 2020/05/16 22:14:24 by emetapod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 typedef unsigned char	t_uchar;
 
-void	*memset(void *b, int c, size_t len);
+void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
@@ -41,7 +41,10 @@ int		ft_atoi(const char *str);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
-int		ft_lower(int c);
+int		ft_isprint(int c);
+int		ft_isascii(int c);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
 
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);

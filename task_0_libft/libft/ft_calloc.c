@@ -6,13 +6,13 @@
 /*   By: emetapod <vitt0ri0.progr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/16 19:06:55 by emetapod          #+#    #+#             */
-/*   Updated: 2020/05/16 19:06:55 by emetapod         ###   ########.fr       */
+/*   Updated: 2020/05/16 19:08:59 by emetapod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	void *ptr;
 
