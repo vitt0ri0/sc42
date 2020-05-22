@@ -6,7 +6,7 @@
 /*   By: emetapod <vitt0ri0.progr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/16 19:06:55 by emetapod          #+#    #+#             */
-/*   Updated: 2020/05/16 22:14:24 by emetapod         ###   ########.fr       */
+/*   Updated: 2020/05/22 21:00:33 by emetapod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t	ft_strlen(const char *s);
-size_t	ft_strlcpy(char *dst, const char *src,
-		size_t dstsize);
-size_t	ft_strlcat(char *dst, const char *src,
-		size_t dstsize);
+size_t	ft_strlcpy(char *dst, const char *src, size_t n);
+size_t	ft_strlcat(char *dst, const char *src, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);

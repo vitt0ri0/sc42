@@ -28,10 +28,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!ss)
 		return (NULL);
 	while (s1[j] != TERM)
-	{
-		ss[i] = s1[j++];
-		i++;
-	}
+		ss[i++] = s1[j++];
 	j = 0;
 	while (s2[j] != TERM)
 	{

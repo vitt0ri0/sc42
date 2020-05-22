@@ -13,3 +13,4 @@ _deps
 libft.a
 a.out
 github_test_*
+test_*

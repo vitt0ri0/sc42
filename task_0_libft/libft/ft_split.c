@@ -6,7 +6,7 @@
 /*   By: emetapod <vitt0ri0.progr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/16 19:06:55 by emetapod          #+#    #+#             */
-/*   Updated: 2020/05/16 19:15:05 by emetapod         ###   ########.fr       */
+/*   Updated: 2020/05/22 20:27:16 by emetapod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ char		**ft_split(char const *s, char c)
 	int		i;
 	int		pos;
 	char	*word;
-	int		len;
 
 	if (!s)
 		return (NULL);
@@ -85,13 +84,14 @@ char		**ft_split(char const *s, char c)
 	pos = get_next_pos(s, 0, c);
 	while (i < count_words(s, c))
 	{
-		len = word_len(s, c, pos);
-		word = take_word(s, pos, len);
-		pos = get_next_pos(s, pos + len, c);
-		if (!word)
+		if (!(word = take_word(s, pos, word_len(s, c, pos))))
+		{
+			while (--i > -1)
+				free(ss[i]);
 			return (NULL);
-		ss[i] = word;
-		i++;
+		}
+		pos = get_next_pos(s, pos + word_len(s, c, pos), c);
+		ss[i++] = word;
 	}
 	ss[i] = NULL;
 	return (ss);
