@@ -3,7 +3,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-#define buf_size 3
+#define buf_size 1
 static char read_buf[buf_size + 1];
 static char *print_buf;
 static size_t pos = 0;
@@ -121,7 +121,14 @@ int get_next_line(int fd, char **line)
 
 int main(int argc, char *argv[])
 {
-	int fd = open("test2.txt", O_RDONLY);
+
+	int fd = -1;
+	if (argc > 1)
+		fd = open(argv[0], O_RDONLY);
+	else
+		fd = 0;
+	fd = open("test_middle_1mb.txt", O_RDONLY);
+
 	if (fd < 0)
 		return (1);
 	char *line;
