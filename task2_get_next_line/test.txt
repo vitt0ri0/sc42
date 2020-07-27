@@ -1,0 +1,6 @@
+some
+arbitrary
+file
+which prints
+hello world
+and nothing more

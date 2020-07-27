@@ -45,7 +45,7 @@ OBJS = $(SRC:.c=.o)
 
 .PHONY: all, re, clean, fclean
 
-all: $(NAME)
+all: $(NAME) clean
 
 $(NAME): $(OBJS) $(HEADER)
 	ar rc $(NAME) $(OBJS)
