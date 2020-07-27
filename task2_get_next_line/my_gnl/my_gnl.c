@@ -1,14 +1,13 @@
 #include "libft.h"
 #include "my_gnl.h"
 #include <fcntl.h>
-#include <unistd.h>
+//#include <unistd.h>
 
-#define buf_size 1
+#define buf_size 1000000000000
 static char read_buf[buf_size + 1];
 static char *print_buf;
 static size_t pos = 0;
 static int is_eof = 0;
-static int read_amount;
 static int last_nl = -2;
 
 size_t	ft_linelen(const char *s)
@@ -95,6 +94,8 @@ char	*ft_strjoin_s2(char *s1, const char *s2, int start_pos, int finish_pos)
 
 int get_next_line(int fd, char **line)
 {
+	int read_amount;
+
 	if (last_nl == -2)
 	{
 		read_buf[buf_size] = TERM;
@@ -105,9 +106,13 @@ int get_next_line(int fd, char **line)
 	while (last_nl == NO_NL && !is_eof)
 	{
 		read_amount = read(fd, read_buf, buf_size);
+		if (read_amount == -1)
+			return -1;
 		if (read_amount < buf_size)
 			is_eof = 1;
 		print_buf = ft_strjoin_s2(print_buf, read_buf, pos, read_amount);
+		if (!print_buf)
+			return -1;
 		last_nl = ft_strchr_pos(print_buf, NL, last_nl+1);
 		pos = 0;
 	}
@@ -115,8 +120,11 @@ int get_next_line(int fd, char **line)
 	if (is_eof && last_nl == -1)
 		return -1;
 	*line = ft_linedup(print_buf, pos, last_nl);
+	line_len = last_nl - pos;
+	if (!*line)
+		return -1;
 	pos = last_nl + 1;
-	return 0;
+	return line_len;
 }
 
 int main(int argc, char *argv[])
@@ -127,15 +135,17 @@ int main(int argc, char *argv[])
 		fd = open(argv[0], O_RDONLY);
 	else
 		fd = 0;
-	fd = open("test_middle_1mb.txt", O_RDONLY);
+	fd = open("test_500kb_line.txt", O_RDONLY);
 
 	if (fd < 0)
 		return (1);
 	char *line;
 
-	while (get_next_line(fd, &line) >= 0)
+	int res = 0;
+	while ((res = get_next_line(fd, &line)) >= 0)
 	{
 		ft_putstr_fd(line, 0);
 		ft_putstr_fd("_\n", 0);
 	}
+	return res;
 }
