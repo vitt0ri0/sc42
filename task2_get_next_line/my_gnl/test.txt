@@ -1,0 +1,6 @@
+some
+arbitrary
+file
+whichprints
+helloworld
+andnothingmoaryes
