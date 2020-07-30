@@ -9,7 +9,7 @@ int test_file(int fd)
 
 	char *line;
 	int res = 0;
-	while ((res = get_next_line(fd, &line)) >= 0)
+	while ((res = get_next_line(fd, &line)) > 0)
 	{
 		ft_putstr_fd(line, 0);
 		ft_putstr_fd("_\n", 0);
@@ -24,16 +24,28 @@ int main(int argc, char *argv[])
 	if (argc > 1)
 		fd = open(argv[1], O_RDONLY);
 
-//	int fds[5];
-//	fds[0] = open("my_gnl/tests/test.txt", O_RDONLY);
-//	fds[1] = open("my_gnl/tests/test2.txt", O_RDONLY);
-//	fds[2] = open("my_gnl/tests/test3.txt", O_RDONLY);
-//	fds[3] = open("my_gnl/tests/test_1kb.txt", O_RDONLY);
-//
-//	for (int i = 0; i < 4; i++)
-//	{
-//		test_file(0);
-//	}
-	test_file(fd);
+
+//	fd = open("my_gnl/tests/main1.c", O_RDONLY);
+	fd = 0;
+
+	int ret;
+	char *line;
+
+	line = 0;
+	ret = get_next_line(fd, &line);
+	while (ret > 0) {
+		write(1, line, ft_strlen(line));
+		write(1, "\n", 1);
+		free(line);
+		line = 0;
+		ret = get_next_line(fd, &line);
+	}
+	if (ret == 0) {
+		write(1, line, ft_strlen(line));
+		write(1, "\n", 1);
+		free(line);
+		line = 0;
+	}
+
 	return 0;
 }

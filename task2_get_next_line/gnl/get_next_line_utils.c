@@ -61,7 +61,7 @@ char	*ft_strjoin_s2(char *s1, const char *s2, int start_pos, int finish_pos)
 	int		i;
 	int		j;
 	char	*ss;
-	size_t		len;
+	int		len;
 
 	if (!s1 || !s2)
 		return (NULL);
