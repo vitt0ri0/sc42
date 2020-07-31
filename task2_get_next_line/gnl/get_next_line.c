@@ -1,6 +1,6 @@
 #include "get_next_line.h"
 
-#define BUFFER_SIZE 10
+//#define BUFFER_SIZE 10
 
 char	*ft_linedup(const char *src, int start_pos, int pos_finish)
 {
@@ -59,7 +59,7 @@ int get_next_line(int fd, char **line)
 	if (fd == -1)
 		return -1;
 	if (is_eof && last_nl == -1) {
-		*line = ft_linedup("", 0, 1);
+		*line = NULL;
 		return 0;
 	}
 	*line = ft_linedup(print_buf, pos, last_nl);
